@@ -1,0 +1,79 @@
+<div class="container">  
+    
+    <form [formGroup]="EmpForm" (ngSubmit)="Register">  
+        
+        <h3>Registation</h3>  
+        <div class="row">  
+             
+        <table class="table">  
+        <tr>  
+          <td>Name</td>  
+          <td>  
+            <input type="hidden" formControlName="Id">  
+            <input type="text" formControlName="Name">  
+            <div *ngIf="submitted && EmpForm.controls.Name.errors" class="text-danger">  
+              <div *ngIf="EmpForm.controls.Name.errors.required">Name is required</div>  
+            </div>   
+          </td>  
+        </tr>  
+          
+        <tr>  
+          <td>LastName</td>  
+          <td><input type="text" formControlName="LastName">  
+            <div *ngIf="submitted && EmpForm.controls.LastName.errors" class="text-danger">  
+              <div *ngIf="EmpForm.controls.LastName.errors.required">LastName is required</div>  
+            </div>   
+          </td>  
+        </tr>  
+        <tr>  
+          <td>Email</td>  
+          <td>  
+            <input type="text" formControlName="Email">  
+            <div *ngIf="submitted && EmpForm.controls.Email.errors" class="text-danger">  
+              <div *ngIf="EmpForm.controls.Email.errors.required">Email is required</div>  
+            </div>  
+          </td>  
+        </tr>  
+        <tr>  
+          <td>Password</td>  
+          <td>  
+            <input type="password" formControlName="PhoneNumber">  
+            <div *ngIf="submitted && EmpForm.controls.PhoneNumber.errors" class="text-danger">  
+              <div *ngIf="EmpForm.controls.PhoneNumber.errors.required">Password is required</div>  
+            </div>              
+          </td>  
+        </tr>  
+        <tr>  
+          <td colspan="2">  
+            <button type="submit" class="btn btn-primary" (click)="Register()">Register</button>  
+          </td>  
+        </tr>  
+          
+      </table>  
+      </div>
+      <div class="row">  
+        <table class="table table-striped">  
+          <tr>  
+            <td>Id</td>  
+            <td>Name</td>  
+              
+            <td>Contact</td>  
+            <td>Email</td>  
+            <td>Address</td>  
+            <td>Edit</td>  
+            <td>Delete</td>  
+          </tr>  
+        
+          <tr *ngFor="let d of data">  
+            <td>{{d.Id}}</td>  
+            <td>{{d.Name}}</td>  
+             
+            <td>{{d.LastName}}</td>  
+            <td>{{d.Email}}</td>  
+            <td>{{d.PhoneNumber}}</td> 
+          </tr>  
+        </table>  
+      </div>  
+    </form>  
+      
+    </div>  

@@ -1,0 +1,39 @@
+<div class="container">  
+    
+    <form >  
+        
+        <h3>Sign In</h3>  
+        <div class="row">  
+             
+        <table class="table">   
+        <tr>  
+          <td>Email</td>  
+          <td>  
+            <input type="text" formControlName="Email">  
+            <div *ngIf="submitted && EmpForm.controls.Email.errors" class="text-danger">  
+              <div *ngIf="EmpForm.controls.Email.errors.required">Email is required</div>  
+            </div>  
+          </td>  
+        </tr>  
+        <tr>  
+          <td>Password</td>  
+          <td>  
+            <input type="password" formControlName="PhoneNumber">  
+            <div *ngIf="submitted && EmpForm.controls.PhoneNumber.errors" class="text-danger">  
+              <div *ngIf="EmpForm.controls.PhoneNumber.errors.required">Password is required</div>  
+            </div>              
+          </td>  
+        </tr>  
+        <tr>  
+          <div>
+          </div>
+          <td colspan="2">  
+            <button type="submit" class="btn btn-primary">Sign In</button>  
+          </td>  
+        </tr>  
+          
+      </table>  
+      </div>
+    </form>  
+      
+    </div>  
